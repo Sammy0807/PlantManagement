@@ -3,21 +3,21 @@ import {
   ActivityIndicator,
   Keyboard,
   KeyboardAvoidingView,
-  StyleSheet
+  StyleSheet,
 } from "react-native";
 
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
-const VALID_EMAIL = "contact@react-ui-kit.com";
-const VALID_PASSWORD = "subscribe";
+const VALID_EMAIL = "sami.egwu90@gmail.com";
+const VALID_PASSWORD = "Testing123";
 
 export default class Login extends Component {
   state = {
     email: VALID_EMAIL,
     password: VALID_PASSWORD,
     errors: [],
-    loading: false
+    loading: false,
   };
 
   handleLogin() {
@@ -46,7 +46,7 @@ export default class Login extends Component {
   render() {
     const { navigation } = this.props;
     const { loading, errors } = this.state;
-    const hasErrors = key => (errors.includes(key) ? styles.hasErrors : null);
+    const hasErrors = (key) => (errors.includes(key) ? styles.hasErrors : null);
 
     return (
       <KeyboardAvoidingView style={styles.login} behavior="padding">
@@ -60,7 +60,7 @@ export default class Login extends Component {
               error={hasErrors("email")}
               style={[styles.input, hasErrors("email")]}
               defaultValue={this.state.email}
-              onChangeText={text => this.setState({ email: text })}
+              onChangeText={(text) => this.setState({ email: text })}
             />
             <Input
               secure
@@ -68,7 +68,7 @@ export default class Login extends Component {
               error={hasErrors("password")}
               style={[styles.input, hasErrors("password")]}
               defaultValue={this.state.password}
-              onChangeText={text => this.setState({ password: text })}
+              onChangeText={(text) => this.setState({ password: text })}
             />
             <Button gradient onPress={() => this.handleLogin()}>
               {loading ? (
@@ -100,15 +100,15 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   login: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   input: {
     borderRadius: 0,
     borderWidth: 0,
     borderBottomColor: theme.colors.gray2,
-    borderBottomWidth: StyleSheet.hairlineWidth
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   hasErrors: {
-    borderBottomColor: theme.colors.accent
-  }
+    borderBottomColor: theme.colors.accent,
+  },
 });

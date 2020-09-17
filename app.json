@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "plant-app",
-    "slug": "plant-app",
+    "name": "Plant Project Manager",
+    "slug": "plantprojectmanager",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "with user suthentication, this app helps the user plant and grow a plant desired",
+    "githubUrl": "https://github.com/Sammy0807/PlantManagement.git"
   }
 }
